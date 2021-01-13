@@ -1,0 +1,20 @@
+{
+  "name": "plasma_bigquery",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node BQPlasmajs.js",
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "Dustin Auby",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "@google-cloud/bigquery": "^5.5.0",
+    "plasma": "github:epicdev-za/plasma"
+  },
+  "devDependencies": {
+    "mocha": "^6.2.0"
+  }
+}
