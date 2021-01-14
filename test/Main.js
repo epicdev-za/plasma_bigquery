@@ -1,6 +1,6 @@
 const assert = require('assert');
 const BQPlasmaJs = require('../BQPlasmaJs');
-// const TestEntity = require('./Entities/TestEntity');
+const TestEntity = require('./Entities/TestEntity');
 const TestData = require("./Assets/data");
 let test_confirm = {};
 let test_count;
@@ -17,8 +17,16 @@ describe('Plasma database interaction tests', function () {
         database.connect(config);
     });
 
-    it('testing database write', function (done) {
-        database.query("SELECT *  FROM `energydrive-analytics.datalogging.data` LIMIT 5").then(([rows]) => {});
+    it('testing database query', function (done) {
+        database.query("SELECT *  FROM `energydrive-analytics.datalogging.data` LIMIT 5").then(([rows]) => {
+            console.log('Rows:');
+            rows.forEach(row => console.log(row));
+
+            done();
+        }).catch((err) => {
+            console.error(err);
+            done();
+        });
         // TestEntity.initialiseTable( (err,res)=>{
         //     if(err !== undefined){
         //         console.error(err);
@@ -31,9 +39,9 @@ describe('Plasma database interaction tests', function () {
         //         });
         //     }
         });
-    });
+    // });
 
-//     it('testing database read and data comparison', function (done) {
+    // it('testing database read and data comparison', function (done) {
 //         TestEntity.list((err,res)=>{
 //             assert.equal(Object.keys(res).length, test_count, 'Testing write count');
 //             let cnt = 0;
@@ -49,13 +57,17 @@ describe('Plasma database interaction tests', function () {
 //         });
 //     });
 //
-//     it('testing get by uuid', function (done) {
-//         let uuid = Object.keys(test_confirm)[0];
-//         TestEntity.get(uuid, (err,obj)=>{
-//             assert.equal(obj.uuid, uuid, 'Testing read on uuid');
-//             done();
-//         });
-//     });
+    it('testing get by uuid', function (done) {
+        // let uuid = Object.keys(test_confirm)[0];
+        TestEntity.get("01ff513e-c845-4966-b7e5-c39b5cbcba58").then((obj) => {
+            assert.equal(obj.uuid, "01ff513e-c845-4966-b7e5-c39b5cbcba58", 'Testing read on uuid');
+            done();
+        }).catch((err) => {
+            console.error(err);
+            done();
+        });
+    });
+});
 //
 //     it('testing count method', function (done) {
 //         TestEntity.count((err,cnt)=>{
