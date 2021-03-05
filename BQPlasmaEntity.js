@@ -84,15 +84,15 @@ class BQPlasmaEntity extends PlasmaEntity{
                     field = PLASMA_MAPPING[field].field;
                 }
                 if (parameter_index === 1) {
-                    fields_query += field + " = $" + parameter_index;
+                    fields_query += field + " = ?" + parameter_index;
                 } else {
-                    fields_query += ", " + field + " = $" + parameter_index;
+                    fields_query += ", " + field + " = ?" + parameter_index;
                 }
                 parameter_index++;
             }
         });
 
-        query += fields_query + " WHERE uuid = $" + parameter_index;
+        query += fields_query + " WHERE uuid = ?" + parameter_index;
         parameters.push(this.uuid);
 
         let _this = this;

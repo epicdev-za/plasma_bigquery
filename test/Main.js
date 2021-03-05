@@ -18,7 +18,7 @@ describe('Plasma database interaction tests', function () {
     });
 
     it('testing database query', function (done) {
-        database.query("SELECT *  FROM `energydrive-analytics.datalogging.data` LIMIT 5").then(([rows]) => {
+        database.query("SELECT *  FROM `energydrive-analytics.datalogging.mv_data_30_minute` WHERE DATE(measurement_timestamp) = \"2021-03-05\" order by measurement_timestamp DESC LIMIT 5 ").then(([rows]) => {
             console.log('Rows:');
             rows.forEach(row => console.log(row));
 

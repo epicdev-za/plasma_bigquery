@@ -11,7 +11,7 @@ class TestEntity extends BQPlasmaEntity {
     }
 
     static getEntity(){
-        return "energydrive-analytics.datalogging.data";
+        return "energydrive-analytics.datalogging.data_1_second";
     }
 
     // static getPlasmaMapping(){
