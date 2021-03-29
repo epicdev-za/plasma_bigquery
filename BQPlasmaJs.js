@@ -133,6 +133,14 @@ class BQPlasmaJs extends PlasmaJs{
     closeConnection(){
         this.bigquery = null;
     }
+
+    static get getConnection(){
+        return this.connection;
+    }
+
+    static set setConnection(connection){
+        this.connection = connection;
+    }
 }
 module.exports = BQPlasmaJs;
 
