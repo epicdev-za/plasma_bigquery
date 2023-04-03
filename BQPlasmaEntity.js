@@ -1,8 +1,8 @@
 const BQPlasmaJs = require('./BQPlasmaJs');
-const PlasmaEntity = require('plasma/PlasmaEntity');
+const PlasmaEntityGeneric = require('./PlasmaEntityGeneric');
 const uuidv4 = require('uuid/v4');
 
-class BQPlasmaEntity extends PlasmaEntity{
+class BQPlasmaEntity extends PlasmaEntityGeneric{
 
     constructor(){
         super();

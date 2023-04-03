@@ -1,7 +1,7 @@
-const PlasmaJs = require('plasma/PlasmaJs');
+const PlasmaJsGeneric = require('./PlasmaJsGeneric');
 const {BigQuery} = require('@google-cloud/bigquery');
 
-class BQPlasmaJs extends PlasmaJs{
+class BQPlasmaJs extends PlasmaJsGeneric{
 
 
     constructor() {
@@ -127,7 +127,7 @@ class BQPlasmaJs extends PlasmaJs{
         configIsset(config, 'location');
         this.bigquery = new BigQuery();
         this.location = config.location;
-        PlasmaJs.setConnection = this;
+        PlasmaJsGeneric.setConnection = this;
     }
 
     closeConnection(){
