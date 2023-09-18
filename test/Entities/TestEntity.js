@@ -1,4 +1,4 @@
-const BQPlasmaEntity = require('../../BQPlasmaEntity');
+import BQPlasmaEntity from '../../BQPlasmaEntity';
 class TestEntity extends BQPlasmaEntity {
     constructor(){
         super();
@@ -32,4 +32,4 @@ class TestEntity extends BQPlasmaEntity {
 
 }
 
-module.exports = TestEntity;
+export default TestEntity;

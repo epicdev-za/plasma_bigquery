@@ -1,5 +1,5 @@
-const PlasmaJsGeneric = require('./PlasmaJsGeneric');
-const {BigQuery} = require('@google-cloud/bigquery');
+import PlasmaJsGeneric from './PlasmaJsGeneric';
+import {BigQuery} from '@google-cloud/bigquery';
 
 class BQPlasmaJs extends PlasmaJsGeneric{
 
@@ -142,7 +142,7 @@ class BQPlasmaJs extends PlasmaJsGeneric{
         this.connection = connection;
     }
 }
-module.exports = BQPlasmaJs;
+export default  BQPlasmaJs;
 
 /* PRIVATE */
 

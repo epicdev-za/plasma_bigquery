@@ -1,6 +1,5 @@
-const BQPlasmaJs = require('./BQPlasmaJs');
-const PlasmaEntityGeneric = require('./PlasmaEntityGeneric');
-const uuidv4 = require('uuid/v4');
+import BQPlasmaJs from './BQPlasmaJs';
+import PlasmaEntityGeneric from './PlasmaEntityGeneric';
 
 class BQPlasmaEntity extends PlasmaEntityGeneric{
 
@@ -129,4 +128,4 @@ class BQPlasmaEntity extends PlasmaEntityGeneric{
     }
 
 }
-module.exports = BQPlasmaEntity;
+export default  BQPlasmaEntity;

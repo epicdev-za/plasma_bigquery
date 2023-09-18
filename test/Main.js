@@ -1,7 +1,7 @@
-const assert = require('assert');
-const BQPlasmaJs = require('../BQPlasmaJs');
-const TestEntity = require('./Entities/TestEntity');
-const TestData = require("./Assets/data");
+import assert from 'assert';
+import BQPlasmaJs from '../BQPlasmaJs';
+import TestEntity from './Entities/TestEntity';
+import TestData from "./Assets/data";
 let test_confirm = {};
 let test_count;
 let config = {

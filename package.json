@@ -1,6 +1,6 @@
 {
   "name": "@epicdev/plasma_bigquery",
-  "version": "1.0.5",
+  "version": "1.1.2",
   "main": "BQPlasmaJs.js",
   "scripts": {
     "start": "node BQPlasmajs.js",
@@ -11,7 +11,6 @@
   "license": "GPL-3.0",
   "dependencies": {
     "@google-cloud/bigquery": "^5.12.0",
-    "@epicdev/plasma": "^1.0.4",
     "uuid": "^3.3.3"
   },
   "devDependencies": {
